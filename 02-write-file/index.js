@@ -5,12 +5,12 @@ let readline = require('readline').createInterface({
 });
 const writeStream = fs.createWriteStream('./02-write-file/text.txt', (err) => {if (err) throw err;});
 const { stdout } = process;
-
-readline.question('Input text here: ', (line) => {
-  if (line === 'exit') {
+console.log('Input data here: ');
+readline.on('line', (input) => {
+  if (input === 'exit') {
     process.exit();
   }
-  fs.appendFile('./02-write-file/text.txt', line, (err) => {
+  writeStream.write(`${input}\n`, (err) => {
     if (err) {
       throw err;
     }

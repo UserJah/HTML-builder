@@ -5,7 +5,7 @@ const rd = async function (path) {
     for (let file of files) {
       let fn = file.name;
       if (file.isFile()) {
-        console.log(`<${fn.split('.')[0]}>-<${fn.split('.')[1]}>-<${(await fs.stat(`${path}/${fn}`)).size} bytes> `);
+        console.log(`<${fn.split('.')[0]}>-<${fn.split('.')[1]}>-<${(await fs.stat(`${path}/${fn}`)).size/1024}kb> `);
       }
     }
   } catch (err) {

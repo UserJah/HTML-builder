@@ -9,8 +9,7 @@ const mergeStyle = async function(path, destination) {
         arr.push(await fs.readFile(`${path}/${style.name}`));
       }
     }
-    console.log(arr);
-    await fs.writeFile(`${destination}/bundle.css`, ...arr);
+    await fs.writeFile(`${destination}/bundle.css`, [...arr]);
   } catch (err) {
     console.log(err);
   }

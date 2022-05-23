@@ -32,19 +32,7 @@ const mergeStyle = async function(path, destination) {
     console.log(err);
   }
 };
-// const listOfComponents = async function(path) {
-//   try {
-//     const components1 = await fs.readdir(`${path}`);
-//     const componentsTags = components1.map((component) => {
-//       return `{{${component.split('.')[0]}}}`;
-//     });
-//     // console.log(components);
-//     // console.log(componentsTags.join(', '));
-//     return componentsTags;
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+
 
 const changeTemplate = async function(...args) {
   try {
@@ -68,5 +56,4 @@ const changeTemplate = async function(...args) {
 
 copyDir('./06-build-page/assets', './06-build-page/project-dist/assets');
 mergeStyle('./06-build-page/styles', './06-build-page/project-dist');
-// listOfComponents('./06-build-page/components');
 changeTemplate('{{footer}}', '{{articles}}', '{{header}}', '{{about}}');
